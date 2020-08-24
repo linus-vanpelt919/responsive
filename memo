@@ -1,0 +1,48 @@
+A , B {～} A要素とB要素に「～」が反映。
+A B {～} A要素の中のB要素に「～」が反映。
+A.B {～} class="B"が付いたA要素のみに「～」が反映。
+A .B {～} A要素の中の「class="B"が付いた要素」のみに「～」が反映。
+A B.C {～} A要素の中の「class="C"が付いたB要素」のみに「～」が反映。
+
+
+ブラウザのデフォルトサイズは
+100% = 1em = 1rem = 16px = 12pt
+body { font-size:62.5%; }
+よく見るこれは、1emが10pxになるように調整する為らしい。
+
+ornament　装飾
+
+@media screen and (max-width: 414px) {
+  .nav-menu {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    background: rgba(255, 255, 255, 0.85);
+    width: 100%;
+    height: 100vh;
+    padding-top: 50px;
+    transition: .5s; }
+    .nav-menu.active {
+      transition: .5s;
+      transform: translateX(-100%);
+      z-index: 2; } }
+
+      メデイアクエリは入れ子にしてあげる
+      .nav-menu {
+        display: block; }
+        @media screen and (max-width: 414px) {
+          .nav-menu {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: -100%;
+            background: rgba(255, 255, 255, 0.85);
+            width: 100%;
+            height: 100vh;
+            padding-top: 50px;
+            transition: .5s; }
+            .nav-menu.active {
+              transition: .5s;
+              transform: translateX(-100%);
+              z-index: 2; } }
